@@ -41,7 +41,7 @@
             <artifactId>okhttp</artifactId>
             <version>3.14.1</version>
         </dependency>
-
+        <!--json转换-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
@@ -58,7 +58,12 @@
             <version>1.18.10</version>
             <scope>provided</scope>
         </dependency>
-
+         <!--spring热更新-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
