@@ -1,4 +1,4 @@
-package com.longrise.community.Controller;
+package com.longrise.community.controller;
 
 import com.longrise.community.dto.PaginationDTO;
 import com.longrise.community.model.User;

@@ -1,7 +1,6 @@
-package com.longrise.community.Controller;
+package com.longrise.community.controller;
 
 import com.longrise.community.dto.QuestionDTO;
-import com.longrise.community.model.Question;
 import com.longrise.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +13,7 @@ public class QuestionController {
   @Autowired
   private QuestionService questionService;
   @GetMapping("/question/{id}")
-  public String question(@PathVariable(name="id") Integer id,
+  public String question(@PathVariable(name="id") Long id,
                          Model model){
     QuestionDTO question = questionService.getQuestionInfo(id);
     model.addAttribute("question",question);

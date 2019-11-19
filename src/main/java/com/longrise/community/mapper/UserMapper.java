@@ -1,10 +1,8 @@
 package com.longrise.community.mapper;
 
 import com.longrise.community.model.User;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Service;
 
 
 @Mapper
@@ -15,4 +13,8 @@ public interface UserMapper {
   User findByToken(@Param("token") String token);
   @Select("select * from user where id = #{id}")
   User getUserById(@Param("id") Long creator);
+  @Select("select * from user where account_id=#{accountId}")
+  User getUserByAccountId(@Param("accountId") String accountId);
+  @Update("update user set token=#{token},name=#{name},gmt_modified=#{gmtModified},avatar_url=#{avatarUrl} where account_id=#{accountId}")
+  void update(User dbUser);
 }

@@ -46,7 +46,7 @@ public class QuestionService {
     return paginationDTO;
   }
 
-  public PaginationDTO getQuestionListByUserId(Integer userid, Integer page, Integer size) {
+  public PaginationDTO getQuestionListByUserId(Long userid, Integer page, Integer size) {
     PaginationDTO paginationDTO = new PaginationDTO();
     //我的所有问题
     Integer totalCount = questionMapper.getCountByUserId(userid);
@@ -72,12 +72,23 @@ public class QuestionService {
 
   }
 
-  public QuestionDTO getQuestionInfo(Integer id) {
+  public QuestionDTO getQuestionInfo(Long id) {
     Question question = questionMapper.getQuestionInfo(id);
     QuestionDTO questionDTO = new QuestionDTO();
     BeanUtils.copyProperties(question,questionDTO);
     User user = userMapper.getUserById(question.getCreator());
     questionDTO.setUser(user);
     return questionDTO;
+  }
+
+  public void createOrUpdate(Question question) {
+    Long id = question.getId();
+    if(id == null){
+      question.setGmtCreate(System.currentTimeMillis());
+      questionMapper.create(question);
+    }else{
+      question.setGmtModified(System.currentTimeMillis());
+      questionMapper.update(question);
+    }
   }
 }
