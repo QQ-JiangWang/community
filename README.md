@@ -13,3 +13,5 @@ CREATE CACHED TABLE PUBLIC.USER(
 
 
 ```
+##mvn插件
+mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
