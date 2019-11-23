@@ -14,4 +14,7 @@ CREATE CACHED TABLE PUBLIC.USER(
 
 ```
 ##mvn插件
+```bash
+mvn flyway:migrate
 mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
+```

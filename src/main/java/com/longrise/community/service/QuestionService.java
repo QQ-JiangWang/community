@@ -2,12 +2,14 @@ package com.longrise.community.service;
 
 import com.longrise.community.dto.PaginationDTO;
 import com.longrise.community.dto.QuestionDTO;
+import com.longrise.community.exception.CustomizeErrorCode;
+import com.longrise.community.exception.CustomizeException;
+import com.longrise.community.mapper.QuestionExtMapper;
 import com.longrise.community.mapper.QuestionMapper;
 import com.longrise.community.mapper.UserMapper;
 import com.longrise.community.model.Question;
 import com.longrise.community.model.QuestionExample;
 import com.longrise.community.model.User;
-import com.longrise.community.model.UserExample;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,8 @@ public class QuestionService {
   private QuestionMapper questionMapper;
   @Autowired
   private UserMapper userMapper;
+  @Autowired
+  private QuestionExtMapper questionExtMapper;
 
 
   public PaginationDTO getQuestionList(Integer page, Integer size) {
@@ -81,6 +85,9 @@ public class QuestionService {
 
   public QuestionDTO getQuestionInfo(Long id) {
     Question question = questionMapper.selectByPrimaryKey(id);
+    if (question == null){
+      throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+    }
     QuestionDTO questionDTO = new QuestionDTO();
     BeanUtils.copyProperties(question,questionDTO);
     User user = userMapper.selectByPrimaryKey(question.getCreator());
@@ -92,12 +99,25 @@ public class QuestionService {
     Long id = question.getId();
     if(id == null){
       question.setGmtCreate(System.currentTimeMillis());
+      question.setViewCount(0);
+      question.setCommentCount(0);
+      question.setLikeCount(0);
       questionMapper.insert(question);
     }else{
       QuestionExample questionExample = new QuestionExample();
       questionExample.createCriteria().andIdEqualTo(id);
       question.setGmtModified(System.currentTimeMillis());
-      questionMapper.updateByExampleSelective(question,questionExample);
+      int updata =questionMapper.updateByExampleSelective(question,questionExample);
+      if(updata == 0){
+        throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+      }
     }
+  }
+
+  public void incView(Long id) {
+    Question question = new Question();
+    question.setId(id);
+    question.setViewCount(1);
+    questionExtMapper.incView(question);
   }
 }

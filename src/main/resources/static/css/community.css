@@ -170,3 +170,6 @@ body {
 .red {
     color: red !important;
 }
+.jumbotron{
+    margin:30px;
+}
