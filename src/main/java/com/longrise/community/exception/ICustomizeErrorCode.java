@@ -1,6 +1,6 @@
 package com.longrise.community.exception;
 
 public interface ICustomizeErrorCode {
-    String getMessger();
+    String getMessage();
     Integer getCode();
 }
