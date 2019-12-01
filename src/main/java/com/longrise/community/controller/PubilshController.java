@@ -20,6 +20,13 @@ public class PubilshController {
 
   @Autowired
   private QuestionService questionService;
+
+  /**
+   * 编辑问题
+   * @param id
+   * @param model
+   * @return
+   */
   @GetMapping("/publish/{id}")
   public String edit(@PathVariable(name="id") Long id,
                      Model model){
@@ -35,6 +42,17 @@ public class PubilshController {
 
     return "publish";
   }
+
+  /**
+   * 提交问题
+   * @param title
+   * @param description
+   * @param tag
+   * @param id
+   * @param request
+   * @param model
+   * @return
+   */
   @PostMapping("/publish")
   public String doPublish(@RequestParam(value = "title", required = false) String title,
                        @RequestParam(value = "description", required = false) String description,

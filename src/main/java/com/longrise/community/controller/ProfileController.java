@@ -17,6 +17,16 @@ public class ProfileController {
 
   @Autowired
   private QuestionService questionService;
+
+  /**
+   * 个人中心列表点击
+   * @param request
+   * @param model
+   * @param action
+   * @param page
+   * @param size
+   * @return
+   */
   @GetMapping("/profile/{action}")
   public  String profile(HttpServletRequest request,
                        Model model,

@@ -13,6 +13,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class IndexController {
     @Autowired
     private QuestionService questionService;
+
+    /**
+     * 获取首页问题列表
+     * @param model
+     * @param page
+     * @param size
+     * @return
+     */
     @GetMapping("/")
     public  String hello(
                          Model model,

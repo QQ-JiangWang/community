@@ -27,7 +27,12 @@ public class QuestionService {
   @Autowired
   private QuestionExtMapper questionExtMapper;
 
-
+  /**
+   * 获取所有问题列表
+   * @param page
+   * @param size
+   * @return
+   */
   public PaginationDTO getQuestionList(Integer page, Integer size) {
 
     PaginationDTO paginationDTO = new PaginationDTO();
@@ -53,6 +58,13 @@ public class QuestionService {
     return paginationDTO;
   }
 
+  /**
+   * 获取指定用户的问题列表
+   * @param userid
+   * @param page
+   * @param size
+   * @return
+   */
   public PaginationDTO getQuestionListByUserId(Long userid, Integer page, Integer size) {
     PaginationDTO paginationDTO = new PaginationDTO();
     //我的所有问题
@@ -83,6 +95,11 @@ public class QuestionService {
 
   }
 
+  /**
+   * 获取指定id的问题信息
+   * @param id
+   * @return
+   */
   public QuestionDTO getQuestionInfo(Long id) {
     Question question = questionMapper.selectByPrimaryKey(id);
     if (question == null){
@@ -95,6 +112,10 @@ public class QuestionService {
     return questionDTO;
   }
 
+  /**
+   * 创建或者修改问题
+   * @param question
+   */
   public void createOrUpdate(Question question) {
     Long id = question.getId();
     if(id == null){
@@ -114,6 +135,10 @@ public class QuestionService {
     }
   }
 
+  /**
+   * 增加问题阅读数
+   * @param id
+   */
   public void incView(Long id) {
     Question question = new Question();
     question.setId(id);
