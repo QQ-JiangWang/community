@@ -1,7 +1,9 @@
 package com.longrise.community.controller;
 
 import com.longrise.community.dto.CommentCreateDTO;
+import com.longrise.community.dto.CommentDTO;
 import com.longrise.community.dto.ResultDTO;
+import com.longrise.community.enums.CommentTypeEnum;
 import com.longrise.community.exception.CustomizeErrorCode;
 import com.longrise.community.exception.CustomizeException;
 import com.longrise.community.model.Comment;
@@ -10,12 +12,10 @@ import com.longrise.community.service.CommentService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Controller
 public class CommentController {
@@ -23,7 +23,7 @@ public class CommentController {
     private CommentService commentService;
 
     /**
-     * 问题的评论或者回复
+     * 问题的回复和评论
      * @param commentCreateDTO
      * @param request
      * @return
@@ -48,5 +48,17 @@ public class CommentController {
         comment.setType(commentCreateDTO.getType());
         commentService.insert(comment);
         return ResultDTO.okOf();
+    }
+
+    /**
+     * 获取回复的评论
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "/comment/{id}",method = RequestMethod.GET)
+    public ResultDTO<List<CommentDTO>> comments(@PathVariable(name="id") Long id){
+        List<CommentDTO> commentDTOS = commentService.listById(id, CommentTypeEnum.COMMENT);
+
+        return  ResultDTO.okOf(commentDTOS);
     }
 }

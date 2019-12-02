@@ -2,6 +2,7 @@ package com.longrise.community.controller;
 
 import com.longrise.community.dto.CommentDTO;
 import com.longrise.community.dto.QuestionDTO;
+import com.longrise.community.enums.CommentTypeEnum;
 import com.longrise.community.service.CommentService;
 import com.longrise.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,7 @@ public class QuestionController {
     QuestionDTO question = questionService.getQuestionInfo(id);
     questionService.incView(id);
     model.addAttribute("question",question);
-    List<CommentDTO> comments = commentService.listById(id);
+    List<CommentDTO> comments = commentService.listById(id,CommentTypeEnum.QUESTION);
     model.addAttribute("comments",comments);
     return "question";
   }
