@@ -34,6 +34,13 @@
                     <span th:text="${question.description}"></span>
                 </div>
 
+                <!--标签-->
+                <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <span class="question-tag" th:each="tag : ${question.tag.split(',')}">
+                        <span class="community-tag" th:text="${tag}"></span>
+                    </span>
+                </div>
 
                 <!--编辑-->
                 <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -134,11 +141,20 @@
                     </div>
                 </div>
             </div>
+            <!--官方微信-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 side">
+                <h4>官方微信</h4>
+                <img class="img-thumbnail question-wechat" src="\images\official-account.png">
+            </div>
             <!--相关问题-->
             <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <h4>相关问题</h4>
-
+                <ul class="question-related">
+                    <li th:each="related : ${relatedQuestions}">
+                        <a th:href="@{'/question/'+ ${related.id}}" th:text="${related.title}"></a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

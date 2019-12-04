@@ -10,6 +10,7 @@ import com.longrise.community.mapper.UserMapper;
 import com.longrise.community.model.Question;
 import com.longrise.community.model.QuestionExample;
 import com.longrise.community.model.User;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -144,5 +145,21 @@ public class QuestionService {
     question.setId(id);
     question.setViewCount(1);
     questionExtMapper.incView(question);
+  }
+  /**
+   * 获取相关信息
+   * @param question
+   * @return
+   */
+  public List<QuestionDTO> selectRelated(QuestionDTO question) {
+    if (StringUtils.isBlank(question.getTag())){
+      return new ArrayList<>();
+    }
+    String tag = question.getTag().replace(",","|");
+    Question dbQuestion = new Question();
+    dbQuestion.setId(question.getId());
+    dbQuestion.setTag(tag);
+    List<QuestionDTO> questionDTOS = questionExtMapper.selectRelated(dbQuestion);
+    return questionDTOS;
   }
 }
