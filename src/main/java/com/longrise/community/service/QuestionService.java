@@ -43,7 +43,9 @@ public class QuestionService {
       page = paginationDTO.getTotalPage();
     }
     Integer offest = (page-1)*size;
-    List<Question> questions = questionMapper.selectByExampleWithBLOBsWithRowbounds(new QuestionExample(), new RowBounds(offest, size));
+    QuestionExample questionExample = new QuestionExample();
+    questionExample.setOrderByClause("gmt_create desc");
+    List<Question> questions = questionMapper.selectByExampleWithBLOBsWithRowbounds(questionExample, new RowBounds(offest, size));
     List<QuestionDTO> questionDTOList = new ArrayList<>();
 
     if(questions != null && questions.size()>0){
@@ -55,7 +57,7 @@ public class QuestionService {
         questionDTOList.add(questionDTO);
       }
     }
-    paginationDTO.setQuestionDTOList(questionDTOList);
+    paginationDTO.setData(questionDTOList);
     return paginationDTO;
   }
 
@@ -79,6 +81,7 @@ public class QuestionService {
     Integer offest = (page-1)*size;
     QuestionExample questionExample1 = new QuestionExample();
     questionExample1.createCriteria().andCreatorEqualTo(userid);
+    questionExample1.setOrderByClause("gmt_create desc");
     List<Question> questionLists = questionMapper.selectByExampleWithBLOBsWithRowbounds(questionExample1, new RowBounds(offest, size));
     List<QuestionDTO> questionDTOList = new ArrayList<>();
 
@@ -91,7 +94,7 @@ public class QuestionService {
         questionDTOList.add(questionDTO);
       }
     }
-    paginationDTO.setQuestionDTOList(questionDTOList);
+    paginationDTO.setData(questionDTOList);
     return paginationDTO;
 
   }
@@ -162,4 +165,5 @@ public class QuestionService {
     List<QuestionDTO> questionDTOS = questionExtMapper.selectRelated(dbQuestion);
     return questionDTOS;
   }
+
 }

@@ -1,10 +1,11 @@
 package com.longrise.community.controller;
 
+import com.longrise.community.cache.TagCache;
 import com.longrise.community.dto.QuestionDTO;
-import com.longrise.community.mapper.QuestionMapper;
 import com.longrise.community.model.Question;
 import com.longrise.community.model.User;
 import com.longrise.community.service.QuestionService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,11 +36,12 @@ public class PubilshController {
     model.addAttribute("tag",question.getTag());
     model.addAttribute("title",question.getTitle());
     model.addAttribute("id",question.getId());
+    model.addAttribute("tags", TagCache.get());
     return "publish";
   }
   @GetMapping("/publish")
-  public String publish(){
-
+  public String publish(Model model){
+    model.addAttribute("tags", TagCache.get());
     return "publish";
   }
 
@@ -63,7 +65,7 @@ public class PubilshController {
     model.addAttribute("title", title);
     model.addAttribute("description", description);
     model.addAttribute("tag", tag);
-
+    model.addAttribute("tags", TagCache.get());
     if (title == null || "".equals(title)) {
       model.addAttribute("error", "标题不能为空");
       return "publish";
@@ -76,7 +78,11 @@ public class PubilshController {
       model.addAttribute("error", "标签不能为空");
       return "publish";
     }
-
+    String noTag = TagCache.filterInvalid(tag);
+    if (!StringUtils.isBlank(noTag)) {
+      model.addAttribute("error", "非法标签："+noTag);
+      return "publish";
+    }
 
     User user = (User) request.getSession().getAttribute("user");
     if (user == null) {
