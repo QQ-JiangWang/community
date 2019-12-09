@@ -2,6 +2,7 @@ package com.longrise.community.service;
 
 import com.longrise.community.dto.PaginationDTO;
 import com.longrise.community.dto.QuestionDTO;
+import com.longrise.community.dto.QuestionQueryDTO;
 import com.longrise.community.exception.CustomizeErrorCode;
 import com.longrise.community.exception.CustomizeException;
 import com.longrise.community.mapper.QuestionExtMapper;
@@ -17,7 +18,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class QuestionService {
@@ -34,18 +37,29 @@ public class QuestionService {
    * @param size
    * @return
    */
-  public PaginationDTO getQuestionList(Integer page, Integer size) {
+  public PaginationDTO getQuestionList(String search,Integer page, Integer size) {
+    if (StringUtils.isNoneBlank(search)){
+      String[] tags = StringUtils.split(search, " ");
+      search = Arrays
+          .stream(tags)
+          .filter(StringUtils::isNotBlank)
+          .map(t -> t.replace("+", "").replace("*", "").replace("?", ""))
+          .filter(StringUtils::isNotBlank)
+          .collect(Collectors.joining("|"));
+    }
 
     PaginationDTO paginationDTO = new PaginationDTO();
-    Integer totalCount = (int)questionMapper.countByExample(new QuestionExample());
+    QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
+    questionQueryDTO.setSearch(search);
+    Integer totalCount =questionExtMapper.countByQuery(questionQueryDTO);
     paginationDTO.setPagination(totalCount,page,size);
     if(page > paginationDTO.getTotalPage()){
       page = paginationDTO.getTotalPage();
     }
     Integer offest = (page-1)*size;
-    QuestionExample questionExample = new QuestionExample();
-    questionExample.setOrderByClause("gmt_create desc");
-    List<Question> questions = questionMapper.selectByExampleWithBLOBsWithRowbounds(questionExample, new RowBounds(offest, size));
+    questionQueryDTO.setPage(offest);
+    questionQueryDTO.setSize(size);
+    List<Question> questions = questionExtMapper.selectByQuery(questionQueryDTO);
     List<QuestionDTO> questionDTOList = new ArrayList<>();
 
     if(questions != null && questions.size()>0){

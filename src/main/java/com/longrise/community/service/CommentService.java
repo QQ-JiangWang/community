@@ -131,6 +131,9 @@ public class CommentService {
    * @param type
    */
   public void createNotify(User commentUser, Long outerId, String title, Long receiver, NotificationTypeEnum type){
+    if(commentUser != null && commentUser.getId() == receiver){
+      return;
+    }
     Notification notification = new Notification();
     notification.setGmtCreate(System.currentTimeMillis());
     notification.setNotifier(commentUser.getId());
