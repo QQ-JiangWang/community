@@ -18,6 +18,13 @@ public class CustomizeErrorController implements ErrorController {
 
         return "error";
     }
+
+    /**
+     * 系统异常捕捉
+     * @param request
+     * @param model
+     * @return
+     */
     @RequestMapping(produces = MediaType.TEXT_HTML_VALUE)
     public ModelAndView errorHtml(HttpServletRequest request, Model model){
         HttpStatus status = getStatus(request);

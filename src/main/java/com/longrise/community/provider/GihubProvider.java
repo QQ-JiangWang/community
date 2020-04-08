@@ -4,12 +4,14 @@ import com.alibaba.fastjson.JSON;
 import com.longrise.community.dto.AccessTokenDTO;
 
 import com.longrise.community.dto.GithubUser;
+import lombok.extern.slf4j.Slf4j;
 import okhttp3.*;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
 @Component
+@Slf4j
 public class GihubProvider {
 //    f07ac363dc2583607e499a7e3dd930bdaef84df9
     public String getAccessToken(AccessTokenDTO accessTokenDTO){
@@ -33,6 +35,7 @@ public class GihubProvider {
             }
             return str;
         } catch (Exception e) {
+            log.error(e.getMessage());
             e.printStackTrace();
         }
         return null;

@@ -1,0 +1,1 @@
+alter table COMMENT add Comment_Count bigint default 0;

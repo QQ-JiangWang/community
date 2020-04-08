@@ -32,6 +32,15 @@ public class AuthorizeController {
     private UserMapper userMapper;
     @Autowired
     private UserService userService;
+
+    /**
+     * 用户登录
+     * @param code
+     * @param state
+     * @param request
+     * @param response
+     * @return
+     */
     @GetMapping("/callback")
     public String callback(@RequestParam(name="code") String code,
                            @RequestParam(name="state") String state,
@@ -62,6 +71,13 @@ public class AuthorizeController {
             return "redirect:/";
         }
     }
+
+    /**
+     * 用户退出
+     * @param request
+     * @param response
+     * @return
+     */
     @GetMapping("/logout")
     public String logout(HttpServletRequest request,
                          HttpServletResponse response){

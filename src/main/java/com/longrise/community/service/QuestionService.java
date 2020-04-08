@@ -2,6 +2,7 @@ package com.longrise.community.service;
 
 import com.longrise.community.dto.PaginationDTO;
 import com.longrise.community.dto.QuestionDTO;
+import com.longrise.community.dto.QuestionQueryDTO;
 import com.longrise.community.exception.CustomizeErrorCode;
 import com.longrise.community.exception.CustomizeException;
 import com.longrise.community.mapper.QuestionExtMapper;
@@ -10,13 +11,16 @@ import com.longrise.community.mapper.UserMapper;
 import com.longrise.community.model.Question;
 import com.longrise.community.model.QuestionExample;
 import com.longrise.community.model.User;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class QuestionService {
@@ -27,17 +31,35 @@ public class QuestionService {
   @Autowired
   private QuestionExtMapper questionExtMapper;
 
-
-  public PaginationDTO getQuestionList(Integer page, Integer size) {
+  /**
+   * 获取所有问题列表
+   * @param page
+   * @param size
+   * @return
+   */
+  public PaginationDTO getQuestionList(String search,Integer page, Integer size) {
+    if (StringUtils.isNoneBlank(search)){
+      String[] tags = StringUtils.split(search, " ");
+      search = Arrays
+          .stream(tags)
+          .filter(StringUtils::isNotBlank)
+          .map(t -> t.replace("+", "").replace("*", "").replace("?", ""))
+          .filter(StringUtils::isNotBlank)
+          .collect(Collectors.joining("|"));
+    }
 
     PaginationDTO paginationDTO = new PaginationDTO();
-    Integer totalCount = (int)questionMapper.countByExample(new QuestionExample());
+    QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
+    questionQueryDTO.setSearch(search);
+    Integer totalCount =questionExtMapper.countByQuery(questionQueryDTO);
     paginationDTO.setPagination(totalCount,page,size);
     if(page > paginationDTO.getTotalPage()){
       page = paginationDTO.getTotalPage();
     }
     Integer offest = (page-1)*size;
-    List<Question> questions = questionMapper.selectByExampleWithBLOBsWithRowbounds(new QuestionExample(), new RowBounds(offest, size));
+    questionQueryDTO.setPage(offest);
+    questionQueryDTO.setSize(size);
+    List<Question> questions = questionExtMapper.selectByQuery(questionQueryDTO);
     List<QuestionDTO> questionDTOList = new ArrayList<>();
 
     if(questions != null && questions.size()>0){
@@ -49,10 +71,17 @@ public class QuestionService {
         questionDTOList.add(questionDTO);
       }
     }
-    paginationDTO.setQuestionDTOList(questionDTOList);
+    paginationDTO.setData(questionDTOList);
     return paginationDTO;
   }
 
+  /**
+   * 获取指定用户的问题列表
+   * @param userid
+   * @param page
+   * @param size
+   * @return
+   */
   public PaginationDTO getQuestionListByUserId(Long userid, Integer page, Integer size) {
     PaginationDTO paginationDTO = new PaginationDTO();
     //我的所有问题
@@ -66,6 +95,7 @@ public class QuestionService {
     Integer offest = (page-1)*size;
     QuestionExample questionExample1 = new QuestionExample();
     questionExample1.createCriteria().andCreatorEqualTo(userid);
+    questionExample1.setOrderByClause("gmt_create desc");
     List<Question> questionLists = questionMapper.selectByExampleWithBLOBsWithRowbounds(questionExample1, new RowBounds(offest, size));
     List<QuestionDTO> questionDTOList = new ArrayList<>();
 
@@ -78,11 +108,16 @@ public class QuestionService {
         questionDTOList.add(questionDTO);
       }
     }
-    paginationDTO.setQuestionDTOList(questionDTOList);
+    paginationDTO.setData(questionDTOList);
     return paginationDTO;
 
   }
 
+  /**
+   * 获取指定id的问题信息
+   * @param id
+   * @return
+   */
   public QuestionDTO getQuestionInfo(Long id) {
     Question question = questionMapper.selectByPrimaryKey(id);
     if (question == null){
@@ -95,6 +130,10 @@ public class QuestionService {
     return questionDTO;
   }
 
+  /**
+   * 创建或者修改问题
+   * @param question
+   */
   public void createOrUpdate(Question question) {
     Long id = question.getId();
     if(id == null){
@@ -114,10 +153,31 @@ public class QuestionService {
     }
   }
 
+  /**
+   * 增加问题阅读数
+   * @param id
+   */
   public void incView(Long id) {
     Question question = new Question();
     question.setId(id);
     question.setViewCount(1);
     questionExtMapper.incView(question);
   }
+  /**
+   * 获取相关信息
+   * @param question
+   * @return
+   */
+  public List<QuestionDTO> selectRelated(QuestionDTO question) {
+    if (StringUtils.isBlank(question.getTag())){
+      return new ArrayList<>();
+    }
+    String tag = question.getTag().replace(",","|");
+    Question dbQuestion = new Question();
+    dbQuestion.setId(question.getId());
+    dbQuestion.setTag(tag);
+    List<QuestionDTO> questionDTOS = questionExtMapper.selectRelated(dbQuestion);
+    return questionDTOS;
+  }
+
 }
