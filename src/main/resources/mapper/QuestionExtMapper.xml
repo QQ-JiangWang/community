@@ -58,7 +58,7 @@
 
   </select>
   <select id="countByQuery" parameterType="com.longrise.community.dto.QuestionQueryDTO" resultType="java.lang.Integer">
-    select count (*) from QUESTION
+    select count(*) from QUESTION
     <where>
       <if test="search != null">
         and title regexp #{search}

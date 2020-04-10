@@ -56,7 +56,11 @@ public class QuestionService {
     if(page > paginationDTO.getTotalPage()){
       page = paginationDTO.getTotalPage();
     }
-    Integer offest = (page-1)*size;
+    Integer offest = 0;
+    if (page != 0){
+       offest = (page-1)*size;
+    }
+
     questionQueryDTO.setPage(offest);
     questionQueryDTO.setSize(size);
     List<Question> questions = questionExtMapper.selectByQuery(questionQueryDTO);

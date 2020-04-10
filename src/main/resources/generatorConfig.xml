@@ -4,14 +4,15 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-
+    <!--指定数据库jdbc驱动jar包的位置-->
+    <!--<classPathEntry location="C:\Users\Administrator\.m2\repository\mysql\mysql-connector-java\5.1.30\mysql-connector-java-5.1.30.jar"/>-->
     <context id="DB2Tables" targetRuntime="MyBatis3">
         
         <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"></plugin>
-        <jdbcConnection driverClass="org.h2.Driver"
-                        connectionURL="jdbc:h2:~/community"
-                        userId="sa"
-                        password="123">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://wangzaiqq.cn:3306/community"
+                        userId="root"
+                        password="123456">
         </jdbcConnection>
 
         <javaTypeResolver>
@@ -32,9 +33,9 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-        <table tableName="user" domainObjectName="User"></table>
-        <table tableName="question" domainObjectName="Question"></table>
-        <table tableName="comment" domainObjectName="Comment"></table>
-        <table tableName="notification" domainObjectName="Notification"></table>
+        <table tableName="USER" domainObjectName="User"></table>
+        <table tableName="QUESTION" domainObjectName="Question"></table>
+        <table tableName="COMMENT" domainObjectName="Comment"></table>
+        <table tableName="NOTIFICATION" domainObjectName="Notification"></table>
     </context>
 </generatorConfiguration>

@@ -1,114 +1,547 @@
-2019-12-08 19:01:21.639  INFO 7140 --- [restartedMain] c.l.community.CommunityApplication       : Starting CommunityApplication on DESKTOP-U09SBKG with PID 7140 (started by WangZai in D:\Program Files\workspace\idea\community)
-2019-12-08 19:01:21.641  INFO 7140 --- [restartedMain] c.l.community.CommunityApplication       : No active profile set, falling back to default profiles: default
-2019-12-08 19:01:21.671  INFO 7140 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-12-08 19:01:21.671  INFO 7140 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-12-08 19:01:22.271  INFO 7140 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
-2019-12-08 19:01:22.276  INFO 7140 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-12-08 19:01:22.276  INFO 7140 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-08 19:01:22.277  INFO 7140 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
-2019-12-08 19:01:22.278  INFO 7140 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2019-12-08 19:01:22.278  INFO 7140 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2019-12-08 19:01:22.280  INFO 7140 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
-2019-12-08 19:01:22.325  INFO 7140 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-12-08 19:01:22.325  INFO 7140 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 654 ms
-2019-12-08 19:01:22.345  INFO 7140 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-12-08 19:01:22.414  INFO 7140 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-12-08 19:01:22.417  INFO 7140 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
-2019-12-08 19:01:22.737  INFO 7140 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-08 19:01:22.773  INFO 7140 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2019-12-08 19:01:22.858  INFO 7140 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-12-08 19:01:22.885  INFO 7140 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
-2019-12-08 19:01:22.887  INFO 7140 --- [restartedMain] c.l.community.CommunityApplication       : Started CommunityApplication in 1.455 seconds (JVM running for 1.814)
-2019-12-08 19:02:30.946  INFO 7140 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-12-08 19:02:30.947  INFO 7140 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-12-08 19:02:30.950  INFO 7140 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2019-12-08 19:02:30.983 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
-2019-12-08 19:02:30.994 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 18b7926c-c66c-4c05-b99e-0d6647dc2fa4(String)
-2019-12-08 19:02:31.002 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
-2019-12-08 19:02:31.006 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
-2019-12-08 19:02:31.007 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
-2019-12-08 19:02:31.010 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.m.N.countByExample                 : <==      Total: 1
-2019-12-08 19:02:31.021 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.m.QuestionExtMapper.countByQuery   : ==>  Preparing: select count (*) from QUESTION 
-2019-12-08 19:02:31.022 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.m.QuestionExtMapper.countByQuery   : ==> Parameters: 
-2019-12-08 19:02:31.022 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.m.QuestionExtMapper.countByQuery   : <==      Total: 1
-2019-12-08 19:02:31.022 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.m.QuestionExtMapper.selectByQuery  : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
-2019-12-08 19:02:31.023 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.m.QuestionExtMapper.selectByQuery  : ==> Parameters: 0(Integer), 4(Integer)
-2019-12-08 19:02:31.027 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.m.QuestionExtMapper.selectByQuery  : <==      Total: 4
-2019-12-08 19:02:31.027 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
-2019-12-08 19:02:31.027 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
-2019-12-08 19:02:31.028 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
-2019-12-08 19:02:31.030 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
-2019-12-08 19:02:31.030 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
-2019-12-08 19:02:31.030 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
-2019-12-08 19:02:31.030 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
-2019-12-08 19:02:31.030 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
-2019-12-08 19:02:31.031 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
-2019-12-08 19:02:31.031 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
-2019-12-08 19:02:31.031 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
-2019-12-08 19:02:31.031 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
-2019-12-08 19:02:31.221 DEBUG 7140 --- [http-nio-8887-exec-5] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
-2019-12-08 19:02:31.221 DEBUG 7140 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
-2019-12-08 19:02:31.222 DEBUG 7140 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
-2019-12-08 19:02:31.222 DEBUG 7140 --- [http-nio-8887-exec-2] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
-2019-12-08 19:02:31.222 DEBUG 7140 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
-2019-12-08 19:02:31.222 DEBUG 7140 --- [http-nio-8887-exec-5] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 18b7926c-c66c-4c05-b99e-0d6647dc2fa4(String)
-2019-12-08 19:02:31.222 DEBUG 7140 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 18b7926c-c66c-4c05-b99e-0d6647dc2fa4(String)
-2019-12-08 19:02:31.222 DEBUG 7140 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 18b7926c-c66c-4c05-b99e-0d6647dc2fa4(String)
-2019-12-08 19:02:31.222 DEBUG 7140 --- [http-nio-8887-exec-2] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 18b7926c-c66c-4c05-b99e-0d6647dc2fa4(String)
-2019-12-08 19:02:31.222 DEBUG 7140 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 18b7926c-c66c-4c05-b99e-0d6647dc2fa4(String)
-2019-12-08 19:02:31.222 DEBUG 7140 --- [http-nio-8887-exec-5] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
-2019-12-08 19:02:31.222 DEBUG 7140 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
-2019-12-08 19:02:31.222 DEBUG 7140 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
-2019-12-08 19:02:31.222 DEBUG 7140 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
-2019-12-08 19:02:31.222 DEBUG 7140 --- [http-nio-8887-exec-2] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
-2019-12-08 19:02:31.223 DEBUG 7140 --- [http-nio-8887-exec-5] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
-2019-12-08 19:02:31.223 DEBUG 7140 --- [http-nio-8887-exec-5] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
-2019-12-08 19:02:31.224 DEBUG 7140 --- [http-nio-8887-exec-7] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
-2019-12-08 19:02:31.224 DEBUG 7140 --- [http-nio-8887-exec-3] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
-2019-12-08 19:02:31.224 DEBUG 7140 --- [http-nio-8887-exec-5] c.l.c.m.N.countByExample                 : <==      Total: 1
-2019-12-08 19:02:31.224 DEBUG 7140 --- [http-nio-8887-exec-2] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
-2019-12-08 19:02:31.224 DEBUG 7140 --- [http-nio-8887-exec-6] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
-2019-12-08 19:02:31.224 DEBUG 7140 --- [http-nio-8887-exec-7] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
-2019-12-08 19:02:31.224 DEBUG 7140 --- [http-nio-8887-exec-6] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
-2019-12-08 19:02:31.224 DEBUG 7140 --- [http-nio-8887-exec-2] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
-2019-12-08 19:02:31.224 DEBUG 7140 --- [http-nio-8887-exec-3] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
-2019-12-08 19:02:31.224 DEBUG 7140 --- [http-nio-8887-exec-7] c.l.c.m.N.countByExample                 : <==      Total: 1
-2019-12-08 19:02:31.225 DEBUG 7140 --- [http-nio-8887-exec-6] c.l.c.m.N.countByExample                 : <==      Total: 1
-2019-12-08 19:02:31.225 DEBUG 7140 --- [http-nio-8887-exec-3] c.l.c.m.N.countByExample                 : <==      Total: 1
-2019-12-08 19:02:31.225 DEBUG 7140 --- [http-nio-8887-exec-2] c.l.c.m.N.countByExample                 : <==      Total: 1
-2019-12-08 19:02:32.059 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
-2019-12-08 19:02:32.059 DEBUG 7140 --- [http-nio-8887-exec-8] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
-2019-12-08 19:02:32.059 DEBUG 7140 --- [http-nio-8887-exec-10] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
-2019-12-08 19:02:32.060 DEBUG 7140 --- [http-nio-8887-exec-8] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 18b7926c-c66c-4c05-b99e-0d6647dc2fa4(String)
-2019-12-08 19:02:32.060 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 18b7926c-c66c-4c05-b99e-0d6647dc2fa4(String)
-2019-12-08 19:02:32.060 DEBUG 7140 --- [http-nio-8887-exec-9] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
-2019-12-08 19:02:32.060 DEBUG 7140 --- [http-nio-8887-exec-9] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 18b7926c-c66c-4c05-b99e-0d6647dc2fa4(String)
-2019-12-08 19:02:32.060 DEBUG 7140 --- [http-nio-8887-exec-8] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
-2019-12-08 19:02:32.060 DEBUG 7140 --- [http-nio-8887-exec-9] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
-2019-12-08 19:02:32.060 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
-2019-12-08 19:02:32.060 DEBUG 7140 --- [http-nio-8887-exec-4] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
-2019-12-08 19:02:32.061 DEBUG 7140 --- [http-nio-8887-exec-4] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 18b7926c-c66c-4c05-b99e-0d6647dc2fa4(String)
-2019-12-08 19:02:32.061 DEBUG 7140 --- [http-nio-8887-exec-10] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 18b7926c-c66c-4c05-b99e-0d6647dc2fa4(String)
-2019-12-08 19:02:32.061 DEBUG 7140 --- [http-nio-8887-exec-4] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
-2019-12-08 19:02:32.061 DEBUG 7140 --- [http-nio-8887-exec-10] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
-2019-12-08 19:02:32.061 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
-2019-12-08 19:02:32.061 DEBUG 7140 --- [http-nio-8887-exec-8] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
-2019-12-08 19:02:32.061 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
-2019-12-08 19:02:32.062 DEBUG 7140 --- [http-nio-8887-exec-9] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
-2019-12-08 19:02:32.062 DEBUG 7140 --- [http-nio-8887-exec-8] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
-2019-12-08 19:02:32.062 DEBUG 7140 --- [http-nio-8887-exec-9] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
-2019-12-08 19:02:32.062 DEBUG 7140 --- [http-nio-8887-exec-1] c.l.c.m.N.countByExample                 : <==      Total: 1
-2019-12-08 19:02:32.062 DEBUG 7140 --- [http-nio-8887-exec-8] c.l.c.m.N.countByExample                 : <==      Total: 1
-2019-12-08 19:02:32.062 DEBUG 7140 --- [http-nio-8887-exec-9] c.l.c.m.N.countByExample                 : <==      Total: 1
-2019-12-08 19:02:32.062 DEBUG 7140 --- [http-nio-8887-exec-4] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
-2019-12-08 19:02:32.062 DEBUG 7140 --- [http-nio-8887-exec-4] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
-2019-12-08 19:02:32.063 DEBUG 7140 --- [http-nio-8887-exec-4] c.l.c.m.N.countByExample                 : <==      Total: 1
-2019-12-08 19:02:32.061 DEBUG 7140 --- [http-nio-8887-exec-10] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
-2019-12-08 19:02:32.064 DEBUG 7140 --- [http-nio-8887-exec-10] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
-2019-12-08 19:02:32.066 DEBUG 7140 --- [http-nio-8887-exec-10] c.l.c.m.N.countByExample                 : <==      Total: 1
-2019-12-08 19:02:32.112 DEBUG 7140 --- [http-nio-8887-exec-2] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
-2019-12-08 19:02:32.112 DEBUG 7140 --- [http-nio-8887-exec-2] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 18b7926c-c66c-4c05-b99e-0d6647dc2fa4(String)
-2019-12-08 19:02:32.113 DEBUG 7140 --- [http-nio-8887-exec-2] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
-2019-12-08 19:02:32.114 DEBUG 7140 --- [http-nio-8887-exec-2] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
-2019-12-08 19:02:32.114 DEBUG 7140 --- [http-nio-8887-exec-2] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
-2019-12-08 19:02:32.114 DEBUG 7140 --- [http-nio-8887-exec-2] c.l.c.m.N.countByExample                 : <==      Total: 1
+2020-04-09 15:45:52.210  INFO 3128 --- [restartedMain] c.l.community.CommunityApplication       : Starting CommunityApplication on USER-20180613SX with PID 3128 (D:\idea\workspace\community\target\classes started by Administrator in D:\idea\workspace\community)
+2020-04-09 15:45:52.214  INFO 3128 --- [restartedMain] c.l.community.CommunityApplication       : No active profile set, falling back to default profiles: default
+2020-04-09 15:45:52.396  INFO 3128 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-09 15:45:52.397  INFO 3128 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-09 15:45:54.306  INFO 3128 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2020-04-09 15:45:54.315  INFO 3128 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-09 15:45:54.316  INFO 3128 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-04-09 15:45:54.319  INFO 3128 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-04-09 15:45:54.319  INFO 3128 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-04-09 15:45:54.319  INFO 3128 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-04-09 15:45:54.371  INFO 3128 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-04-09 15:45:54.511  INFO 3128 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-09 15:45:54.511  INFO 3128 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2114 ms
+2020-04-09 15:45:55.308  INFO 3128 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-09 15:45:55.408  INFO 3128 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-04-09 15:45:55.621  INFO 3128 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-04-09 15:45:55.710  INFO 3128 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2020-04-09 15:45:55.712  INFO 3128 --- [restartedMain] c.l.community.CommunityApplication       : Started CommunityApplication in 4.231 seconds (JVM running for 5.935)
+2020-04-09 15:46:11.741  INFO 3128 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-09 15:46:11.741  INFO 3128 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-09 15:46:11.765  INFO 3128 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 24 ms
+2020-04-09 15:46:11.954  INFO 3128 --- [http-nio-8887-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-09 15:46:12.493  INFO 3128 --- [http-nio-8887-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-09 15:46:12.512 DEBUG 3128 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 15:46:12.524 DEBUG 3128 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 15:46:12.570 DEBUG 3128 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 15:46:12.642 DEBUG 3128 --- [http-nio-8887-exec-1] c.l.c.m.QuestionExtMapper.countByQuery   : ==>  Preparing: select count (*) from QUESTION 
+2020-04-09 15:46:12.643 DEBUG 3128 --- [http-nio-8887-exec-1] c.l.c.m.QuestionExtMapper.countByQuery   : ==> Parameters: 
+2020-04-09 15:46:12.774  WARN 3128 --- [http-nio-8887-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) from QUESTION' at line 1
+### The error may exist in file [D:\idea\workspace\community\target\classes\mapper\QuestionExtMapper.xml]
+### The error may involve com.longrise.community.mapper.QuestionExtMapper.countByQuery-Inline
+### The error occurred while setting parameters
+### SQL: select count (*) from QUESTION
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) from QUESTION' at line 1
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) from QUESTION' at line 1]
+2020-04-09 15:46:13.178 DEBUG 3128 --- [http-nio-8887-exec-2] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 15:46:13.180 DEBUG 3128 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 15:46:13.181 DEBUG 3128 --- [http-nio-8887-exec-2] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 15:46:13.181 DEBUG 3128 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 15:46:13.219 DEBUG 3128 --- [http-nio-8887-exec-2] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 15:46:13.219 DEBUG 3128 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 15:46:13.219 DEBUG 3128 --- [http-nio-8887-exec-4] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 15:46:13.220 DEBUG 3128 --- [http-nio-8887-exec-4] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 15:46:13.220 DEBUG 3128 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 15:46:13.220 DEBUG 3128 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 15:46:13.256 DEBUG 3128 --- [http-nio-8887-exec-4] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 15:46:13.256 DEBUG 3128 --- [http-nio-8887-exec-5] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 15:46:13.257 DEBUG 3128 --- [http-nio-8887-exec-5] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 15:46:13.258 DEBUG 3128 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 15:46:13.293 DEBUG 3128 --- [http-nio-8887-exec-5] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 15:54:44.866  INFO 11796 --- [restartedMain] c.l.community.CommunityApplication       : Starting CommunityApplication on USER-20180613SX with PID 11796 (D:\idea\workspace\community\target\classes started by Administrator in D:\idea\workspace\community)
+2020-04-09 15:54:44.869  INFO 11796 --- [restartedMain] c.l.community.CommunityApplication       : No active profile set, falling back to default profiles: default
+2020-04-09 15:54:44.937  INFO 11796 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-09 15:54:44.937  INFO 11796 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-09 15:54:46.017  INFO 11796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2020-04-09 15:54:46.026  INFO 11796 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-09 15:54:46.026  INFO 11796 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-04-09 15:54:46.028  INFO 11796 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-04-09 15:54:46.029  INFO 11796 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-04-09 15:54:46.029  INFO 11796 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-04-09 15:54:46.032  INFO 11796 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-04-09 15:54:46.098  INFO 11796 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-09 15:54:46.098  INFO 11796 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1161 ms
+2020-04-09 15:54:46.642  INFO 11796 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-09 15:54:46.696  INFO 11796 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-04-09 15:54:46.821  INFO 11796 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-04-09 15:54:46.858  INFO 11796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2020-04-09 15:54:46.862  INFO 11796 --- [restartedMain] c.l.community.CommunityApplication       : Started CommunityApplication in 2.446 seconds (JVM running for 3.861)
+2020-04-09 15:54:50.131  INFO 11796 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-09 15:54:50.131  INFO 11796 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-09 15:54:50.138  INFO 11796 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-04-09 15:54:50.196  INFO 11796 --- [http-nio-8887-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-09 15:54:50.741  INFO 11796 --- [http-nio-8887-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-09 15:54:50.750 DEBUG 11796 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 15:54:50.765 DEBUG 11796 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 15:54:50.809 DEBUG 11796 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 15:54:50.836 DEBUG 11796 --- [http-nio-8887-exec-1] c.l.c.m.QuestionExtMapper.countByQuery   : ==>  Preparing: select count (*) from QUESTION 
+2020-04-09 15:54:50.836 DEBUG 11796 --- [http-nio-8887-exec-1] c.l.c.m.QuestionExtMapper.countByQuery   : ==> Parameters: 
+2020-04-09 15:54:50.916  WARN 11796 --- [http-nio-8887-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) from QUESTION' at line 1
+### The error may exist in file [D:\idea\workspace\community\target\classes\mapper\QuestionExtMapper.xml]
+### The error may involve com.longrise.community.mapper.QuestionExtMapper.countByQuery-Inline
+### The error occurred while setting parameters
+### SQL: select count (*) from QUESTION
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) from QUESTION' at line 1
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) from QUESTION' at line 1]
+2020-04-09 15:54:51.192 DEBUG 11796 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 15:54:51.192 DEBUG 11796 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 15:54:51.193 DEBUG 11796 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 15:54:51.193 DEBUG 11796 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 15:54:51.242 DEBUG 11796 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 15:54:51.242 DEBUG 11796 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 15:54:51.242 DEBUG 11796 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 15:54:51.243 DEBUG 11796 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 15:54:51.245 DEBUG 11796 --- [http-nio-8887-exec-2] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 15:54:51.246 DEBUG 11796 --- [http-nio-8887-exec-2] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 15:54:51.283 DEBUG 11796 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 15:54:51.284 DEBUG 11796 --- [http-nio-8887-exec-2] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 15:54:51.284 DEBUG 11796 --- [http-nio-8887-exec-5] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 15:54:51.284 DEBUG 11796 --- [http-nio-8887-exec-5] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 15:54:51.321 DEBUG 11796 --- [http-nio-8887-exec-5] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 15:54:57.266 DEBUG 11796 --- [http-nio-8887-exec-9] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 15:54:57.266 DEBUG 11796 --- [http-nio-8887-exec-9] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 15:54:57.302 DEBUG 11796 --- [http-nio-8887-exec-9] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 15:54:57.304 DEBUG 11796 --- [http-nio-8887-exec-9] c.l.c.m.QuestionExtMapper.countByQuery   : ==>  Preparing: select count (*) from QUESTION 
+2020-04-09 15:54:57.305 DEBUG 11796 --- [http-nio-8887-exec-9] c.l.c.m.QuestionExtMapper.countByQuery   : ==> Parameters: 
+2020-04-09 15:54:57.341  WARN 11796 --- [http-nio-8887-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) from QUESTION' at line 1
+### The error may exist in file [D:\idea\workspace\community\target\classes\mapper\QuestionExtMapper.xml]
+### The error may involve com.longrise.community.mapper.QuestionExtMapper.countByQuery-Inline
+### The error occurred while setting parameters
+### SQL: select count (*) from QUESTION
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) from QUESTION' at line 1
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) from QUESTION' at line 1]
+2020-04-09 15:54:57.386 DEBUG 11796 --- [http-nio-8887-exec-10] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 15:54:57.386 DEBUG 11796 --- [http-nio-8887-exec-10] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 15:54:57.422 DEBUG 11796 --- [http-nio-8887-exec-10] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 15:54:57.426 DEBUG 11796 --- [http-nio-8887-exec-4] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 15:54:57.427 DEBUG 11796 --- [http-nio-8887-exec-4] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 15:54:57.427 DEBUG 11796 --- [http-nio-8887-exec-8] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 15:54:57.429 DEBUG 11796 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 15:54:57.430 DEBUG 11796 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 15:54:57.432 DEBUG 11796 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 15:54:57.432 DEBUG 11796 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 15:54:57.432 DEBUG 11796 --- [http-nio-8887-exec-8] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 15:54:57.466 DEBUG 11796 --- [http-nio-8887-exec-4] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 15:54:57.467 DEBUG 11796 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 15:54:57.469 DEBUG 11796 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 15:54:57.470 DEBUG 11796 --- [http-nio-8887-exec-8] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 15:55:39.079  INFO 7304 --- [restartedMain] c.l.community.CommunityApplication       : Starting CommunityApplication on USER-20180613SX with PID 7304 (D:\idea\workspace\community\target\classes started by Administrator in D:\idea\workspace\community)
+2020-04-09 15:55:39.081  INFO 7304 --- [restartedMain] c.l.community.CommunityApplication       : No active profile set, falling back to default profiles: default
+2020-04-09 15:55:39.165  INFO 7304 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-09 15:55:39.165  INFO 7304 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-09 15:55:40.303  INFO 7304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2020-04-09 15:55:40.311  INFO 7304 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-09 15:55:40.311  INFO 7304 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-04-09 15:55:40.313  INFO 7304 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-04-09 15:55:40.314  INFO 7304 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-04-09 15:55:40.314  INFO 7304 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-04-09 15:55:40.317  INFO 7304 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-04-09 15:55:40.377  INFO 7304 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-09 15:55:40.377  INFO 7304 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1212 ms
+2020-04-09 15:55:40.873  INFO 7304 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-09 15:55:40.929  INFO 7304 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-04-09 15:55:41.052  INFO 7304 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-04-09 15:55:41.090  INFO 7304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2020-04-09 15:55:41.094  INFO 7304 --- [restartedMain] c.l.community.CommunityApplication       : Started CommunityApplication in 2.414 seconds (JVM running for 3.193)
+2020-04-09 15:59:11.130  INFO 7304 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-09 15:59:11.130  INFO 7304 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-09 15:59:11.136  INFO 7304 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-04-09 15:59:11.190  INFO 7304 --- [http-nio-8887-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-09 15:59:11.726  INFO 7304 --- [http-nio-8887-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-09 15:59:11.733 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 15:59:11.749 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 15:59:11.794 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 15:59:11.820 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.m.QuestionExtMapper.countByQuery   : ==>  Preparing: select count(*) from QUESTION 
+2020-04-09 15:59:11.820 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.m.QuestionExtMapper.countByQuery   : ==> Parameters: 
+2020-04-09 15:59:11.856 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.m.QuestionExtMapper.countByQuery   : <==      Total: 1
+2020-04-09 15:59:11.857 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.m.QuestionExtMapper.selectByQuery  : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2020-04-09 15:59:11.857 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.m.QuestionExtMapper.selectByQuery  : ==> Parameters: -4(Integer), 4(Integer)
+2020-04-09 15:59:11.931  WARN 7304 --- [http-nio-8887-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-4,4' at line 3
+### The error may exist in file [D:\idea\workspace\community\target\classes\mapper\QuestionExtMapper.xml]
+### The error may involve com.longrise.community.mapper.QuestionExtMapper.selectByQuery-Inline
+### The error occurred while setting parameters
+### SQL: select * from QUESTION            order by gmt_create desc limit ?,?
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-4,4' at line 3
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-4,4' at line 3]
+2020-04-09 15:59:12.206 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 15:59:12.207 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 15:59:12.207 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 15:59:12.207 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 15:59:12.243 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 15:59:12.244 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 15:59:12.244 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 15:59:12.247 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 15:59:12.248 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 15:59:12.248 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 15:59:12.280 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 15:59:12.281 DEBUG 7304 --- [http-nio-8887-exec-5] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 15:59:12.282 DEBUG 7304 --- [http-nio-8887-exec-5] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 15:59:12.288 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 15:59:12.317 DEBUG 7304 --- [http-nio-8887-exec-5] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:01:05.310 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:01:05.311 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 16:01:05.347 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:01:05.348 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.m.QuestionExtMapper.countByQuery   : ==>  Preparing: select count(*) from QUESTION 
+2020-04-09 16:01:05.348 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.m.QuestionExtMapper.countByQuery   : ==> Parameters: 
+2020-04-09 16:01:05.384 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.m.QuestionExtMapper.countByQuery   : <==      Total: 1
+2020-04-09 16:01:42.229  WARN 7304 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m392ms623µs261ns).
+2020-04-09 16:01:42.265 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.m.QuestionExtMapper.selectByQuery  : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2020-04-09 16:01:42.266 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.m.QuestionExtMapper.selectByQuery  : ==> Parameters: -4(Integer), 4(Integer)
+2020-04-09 16:01:42.301  WARN 7304 --- [http-nio-8887-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-4,4' at line 3
+### The error may exist in file [D:\idea\workspace\community\target\classes\mapper\QuestionExtMapper.xml]
+### The error may involve com.longrise.community.mapper.QuestionExtMapper.selectByQuery-Inline
+### The error occurred while setting parameters
+### SQL: select * from QUESTION            order by gmt_create desc limit ?,?
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-4,4' at line 3
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-4,4' at line 3]
+2020-04-09 16:01:42.322 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:01:42.323 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 16:01:42.358 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:01:42.361 DEBUG 7304 --- [http-nio-8887-exec-5] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:01:42.361 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:01:42.362 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 16:01:42.363 DEBUG 7304 --- [http-nio-8887-exec-10] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:01:42.365 DEBUG 7304 --- [http-nio-8887-exec-4] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:01:42.365 DEBUG 7304 --- [http-nio-8887-exec-5] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 16:01:42.366 DEBUG 7304 --- [http-nio-8887-exec-10] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 16:01:42.366 DEBUG 7304 --- [http-nio-8887-exec-4] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 16:01:42.402 DEBUG 7304 --- [http-nio-8887-exec-10] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:01:42.403 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:01:42.403 DEBUG 7304 --- [http-nio-8887-exec-5] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:01:42.405 DEBUG 7304 --- [http-nio-8887-exec-4] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:03:40.291 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:03:40.291 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 16:03:40.329 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:04:14.249 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.QuestionExtMapper.countByQuery   : ==>  Preparing: select count(*) from QUESTION 
+2020-04-09 16:04:14.251 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.QuestionExtMapper.countByQuery   : ==> Parameters: 
+2020-04-09 16:04:14.293 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.QuestionExtMapper.countByQuery   : <==      Total: 1
+2020-04-09 16:05:49.655  WARN 7304 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=57s340ms640µs568ns).
+2020-04-09 16:07:25.560 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.QuestionExtMapper.selectByQuery  : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2020-04-09 16:07:25.560 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.QuestionExtMapper.selectByQuery  : ==> Parameters: -4(Integer), 4(Integer)
+2020-04-09 16:07:25.596  WARN 7304 --- [http-nio-8887-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-4,4' at line 3
+### The error may exist in file [D:\idea\workspace\community\target\classes\mapper\QuestionExtMapper.xml]
+### The error may involve com.longrise.community.mapper.QuestionExtMapper.selectByQuery-Inline
+### The error occurred while setting parameters
+### SQL: select * from QUESTION            order by gmt_create desc limit ?,?
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-4,4' at line 3
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-4,4' at line 3]
+2020-04-09 16:07:25.617 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:07:25.618 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 16:07:25.654 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:07:30.618  WARN 7304 --- [http-nio-8887-exec-6] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@3eac2efc (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:07:30.618  WARN 7304 --- [http-nio-8887-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@1637bcf7 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:07:30.618  WARN 7304 --- [http-nio-8887-exec-10] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@72c091b7 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:07:30.620  WARN 7304 --- [http-nio-8887-exec-1] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@3de8b39c (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:07:30.653 DEBUG 7304 --- [http-nio-8887-exec-10] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:07:30.653 DEBUG 7304 --- [http-nio-8887-exec-10] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 16:07:30.689 DEBUG 7304 --- [http-nio-8887-exec-10] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:07:32.605  INFO 7304 --- [Thread-10] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-09 16:07:32.606  INFO 7304 --- [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-04-09 16:07:32.611  WARN 7304 --- [http-nio-8887-exec-1] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@48f3ba7f (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:07:32.611  WARN 7304 --- [http-nio-8887-exec-6] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@5849db2d (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:07:32.618  INFO 7304 --- [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-04-09 16:07:32.623  WARN 7304 --- [http-nio-8887-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@341bc026 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:07:35.147  INFO 7304 --- [restartedMain] c.l.community.CommunityApplication       : Starting CommunityApplication on USER-20180613SX with PID 7304 (D:\idea\workspace\community\target\classes started by Administrator in D:\idea\workspace\community)
+2020-04-09 16:07:35.148  INFO 7304 --- [restartedMain] c.l.community.CommunityApplication       : No active profile set, falling back to default profiles: default
+2020-04-09 16:07:35.419  WARN 7304 --- [restartedMain] org.apache.tomcat.util.modeler.Registry  : The MBean registry cannot be disabled because it has already been initialised
+2020-04-09 16:07:35.446  INFO 7304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2020-04-09 16:07:35.447  INFO 7304 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-09 16:07:35.447  INFO 7304 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-04-09 16:07:35.447  INFO 7304 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-04-09 16:07:35.447  INFO 7304 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-04-09 16:07:35.448  INFO 7304 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-04-09 16:07:35.448  INFO 7304 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-04-09 16:07:35.460  INFO 7304 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-09 16:07:35.460  INFO 7304 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 308 ms
+2020-04-09 16:07:35.609  INFO 7304 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-09 16:07:35.623  INFO 7304 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-04-09 16:07:35.685  INFO 7304 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-04-09 16:07:35.696  INFO 7304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2020-04-09 16:07:35.697  INFO 7304 --- [restartedMain] c.l.community.CommunityApplication       : Started CommunityApplication in 0.579 seconds (JVM running for 717.759)
+2020-04-09 16:07:35.700  INFO 7304 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-04-09 16:07:35.714  INFO 7304 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-09 16:07:35.714  INFO 7304 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-09 16:07:35.718  INFO 7304 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-04-09 16:07:35.722  INFO 7304 --- [http-nio-8887-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-04-09 16:07:36.125  INFO 7304 --- [http-nio-8887-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-04-09 16:07:36.125 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:07:36.126 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 16:07:36.162 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:07:44.483 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:07:44.484 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 16:07:44.520 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:07:48.897 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.m.QuestionExtMapper.countByQuery   : ==>  Preparing: select count(*) from QUESTION 
+2020-04-09 16:07:48.898 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.m.QuestionExtMapper.countByQuery   : ==> Parameters: 
+2020-04-09 16:07:48.939 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.m.QuestionExtMapper.countByQuery   : <==      Total: 1
+2020-04-09 16:07:56.974 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.m.QuestionExtMapper.selectByQuery  : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2020-04-09 16:07:56.974 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.m.QuestionExtMapper.selectByQuery  : ==> Parameters: 0(Integer), 4(Integer)
+2020-04-09 16:07:57.011 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.m.QuestionExtMapper.selectByQuery  : <==      Total: 0
+2020-04-09 16:07:57.107 DEBUG 7304 --- [http-nio-8887-exec-5] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:07:57.108 DEBUG 7304 --- [http-nio-8887-exec-5] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 16:07:57.146 DEBUG 7304 --- [http-nio-8887-exec-4] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:07:57.146 DEBUG 7304 --- [http-nio-8887-exec-5] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:07:57.147 DEBUG 7304 --- [http-nio-8887-exec-4] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 16:07:57.148 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:07:57.149 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:07:57.149 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 16:07:57.148 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 16:07:57.152 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:07:57.152 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 16:07:57.184 DEBUG 7304 --- [http-nio-8887-exec-4] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:07:57.185 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:07:57.187 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:07:57.191 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:07:57.224 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:07:57.225 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 16:07:57.261 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:14:06.867  WARN 7304 --- [http-nio-8887-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@3a8335af (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:14:11.869  WARN 7304 --- [http-nio-8887-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@b736b0f (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:14:16.870  WARN 7304 --- [http-nio-8887-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@7921b626 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:14:21.870  WARN 7304 --- [http-nio-8887-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@1641cdfb (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:14:26.871  WARN 7304 --- [http-nio-8887-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@6225d993 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:14:31.872  WARN 7304 --- [http-nio-8887-exec-4] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@5ee2f4fd (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:14:31.875  WARN 7304 --- [http-nio-8887-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
+### Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLTransientConnectionException: HikariPool-2 - Connection is not available, request timed out after 30004ms.
+### The error may exist in file [D:\idea\workspace\community\target\classes\mapper\UserMapper.xml]
+### The error may involve com.longrise.community.mapper.UserMapper.selectByExample
+### The error occurred while executing a query
+### Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Failed to obtain JDBC Connection; nested exception is java.sql.SQLTransientConnectionException: HikariPool-2 - Connection is not available, request timed out after 30004ms.]
+2020-04-09 16:14:31.953 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:14:31.954 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 16:14:31.990 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:14:36.914  WARN 7304 --- [http-nio-8887-exec-8] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@65057d7b (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:14:36.917  WARN 7304 --- [http-nio-8887-exec-9] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@64bbdc5d (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:14:36.918  WARN 7304 --- [http-nio-8887-exec-7] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@351f44ff (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:14:36.917  WARN 7304 --- [http-nio-8887-exec-6] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@4a6b9820 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:14:36.950 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:14:36.950 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 16:14:36.953 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:14:36.954 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:14:36.954 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 16:14:36.955 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 16:14:36.956 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:14:36.957 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 16:14:36.986 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:14:36.990 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:14:36.991 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:14:36.995 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:16:26.026 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:16:26.026 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 3b5c63ea-3aba-4f5d-8a2d-70e1de208d66(String)
+2020-04-09 16:16:26.062 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:16:55.501  WARN 7304 --- [HikariPool-2 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=49s237ms974µs642ns).
+2020-04-09 16:16:56.924 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( ACCOUNT_ID = ? ) 
+2020-04-09 16:16:56.926 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 54254744(String)
+2020-04-09 16:16:56.965 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 0
+2020-04-09 16:17:02.044 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.community.mapper.UserMapper.insert   : ==>  Preparing: insert into USER (ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2020-04-09 16:17:02.051 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.community.mapper.UserMapper.insert   : ==> Parameters: null, 54254744(String), null, 5d2873d3-66a3-4b66-8319-40665af28b19(String), 1586420220017(Long), null, null, https://avatars2.githubusercontent.com/u/54254744?v=4(String)
+2020-04-09 16:17:02.131 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.community.mapper.UserMapper.insert   : <==    Updates: 1
+2020-04-09 16:17:04.502 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:17:04.502 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 5d2873d3-66a3-4b66-8319-40665af28b19(String)
+2020-04-09 16:17:04.539 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-09 16:17:04.563 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
+2020-04-09 16:17:04.564 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
+2020-04-09 16:17:04.600 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.m.N.countByExample                 : <==      Total: 1
+2020-04-09 16:21:12.548  WARN 7304 --- [HikariPool-2 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=4m17s33ms186µs612ns).
+2020-04-09 16:21:17.553  WARN 7304 --- [http-nio-8887-exec-8] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@765a4da6 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:21:17.557  WARN 7304 --- [http-nio-8887-exec-9] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@5ecdf866 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:21:17.557  WARN 7304 --- [http-nio-8887-exec-6] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@59cce37b (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:21:17.560  WARN 7304 --- [http-nio-8887-exec-3] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@d5808f (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:21:17.562  WARN 7304 --- [http-nio-8887-exec-7] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@3b45892d (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:21:22.556  WARN 7304 --- [http-nio-8887-exec-8] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@2b458658 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:21:22.560  WARN 7304 --- [http-nio-8887-exec-9] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@17ccef83 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:21:22.560  WARN 7304 --- [http-nio-8887-exec-6] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@7b5b9272 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:21:22.564  WARN 7304 --- [http-nio-8887-exec-3] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@45d70ef1 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:21:22.571  WARN 7304 --- [http-nio-8887-exec-7] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection com.mysql.jdbc.JDBC4Connection@4aabbb9 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-04-09 16:21:22.593 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.m.QuestionExtMapper.countByQuery   : ==>  Preparing: select count(*) from QUESTION 
+2020-04-09 16:21:22.594 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.m.QuestionExtMapper.countByQuery   : ==> Parameters: 
+2020-04-09 16:21:22.596 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:21:22.597 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 5d2873d3-66a3-4b66-8319-40665af28b19(String)
+2020-04-09 16:21:22.597 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:21:22.597 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 5d2873d3-66a3-4b66-8319-40665af28b19(String)
+2020-04-09 16:21:22.600 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:21:22.601 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 5d2873d3-66a3-4b66-8319-40665af28b19(String)
+2020-04-09 16:21:22.610 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:21:22.610 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 5d2873d3-66a3-4b66-8319-40665af28b19(String)
+2020-04-09 16:21:22.630 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.m.QuestionExtMapper.countByQuery   : <==      Total: 1
+2020-04-09 16:21:22.631 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.m.QuestionExtMapper.selectByQuery  : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2020-04-09 16:21:22.631 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.m.QuestionExtMapper.selectByQuery  : ==> Parameters: 0(Integer), 4(Integer)
+2020-04-09 16:21:22.632 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-09 16:21:22.635 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-09 16:21:22.635 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
+2020-04-09 16:21:22.635 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
+2020-04-09 16:21:22.635 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
+2020-04-09 16:21:22.636 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
+2020-04-09 16:21:22.637 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-09 16:21:22.638 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
+2020-04-09 16:21:22.638 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
+2020-04-09 16:21:22.648 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-09 16:21:22.649 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
+2020-04-09 16:21:22.649 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
+2020-04-09 16:21:22.668 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.m.QuestionExtMapper.selectByQuery  : <==      Total: 0
+2020-04-09 16:21:22.670 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.m.N.countByExample                 : <==      Total: 1
+2020-04-09 16:21:22.671 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.m.QuestionExtMapper.countByQuery   : ==>  Preparing: select count(*) from QUESTION 
+2020-04-09 16:21:22.671 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.m.QuestionExtMapper.countByQuery   : ==> Parameters: 
+2020-04-09 16:21:22.673 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.m.N.countByExample                 : <==      Total: 1
+2020-04-09 16:21:22.673 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.m.QuestionExtMapper.countByQuery   : ==>  Preparing: select count(*) from QUESTION 
+2020-04-09 16:21:22.673 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.m.QuestionExtMapper.countByQuery   : ==> Parameters: 
+2020-04-09 16:21:22.674 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.m.N.countByExample                 : <==      Total: 1
+2020-04-09 16:21:22.674 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.m.QuestionExtMapper.countByQuery   : ==>  Preparing: select count(*) from QUESTION 
+2020-04-09 16:21:22.674 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.m.QuestionExtMapper.countByQuery   : ==> Parameters: 
+2020-04-09 16:21:22.688 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.N.countByExample                 : <==      Total: 1
+2020-04-09 16:21:22.689 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.QuestionExtMapper.countByQuery   : ==>  Preparing: select count(*) from QUESTION 
+2020-04-09 16:21:22.689 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.QuestionExtMapper.countByQuery   : ==> Parameters: 
+2020-04-09 16:21:22.711 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.m.QuestionExtMapper.countByQuery   : <==      Total: 1
+2020-04-09 16:21:22.711 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.m.QuestionExtMapper.selectByQuery  : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2020-04-09 16:21:22.712 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.m.QuestionExtMapper.selectByQuery  : ==> Parameters: 0(Integer), 4(Integer)
+2020-04-09 16:21:22.713 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.m.QuestionExtMapper.countByQuery   : <==      Total: 1
+2020-04-09 16:21:22.713 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.m.QuestionExtMapper.selectByQuery  : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2020-04-09 16:21:22.713 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.m.QuestionExtMapper.selectByQuery  : ==> Parameters: 0(Integer), 4(Integer)
+2020-04-09 16:21:22.711 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.m.QuestionExtMapper.countByQuery   : <==      Total: 1
+2020-04-09 16:21:22.714 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.m.QuestionExtMapper.selectByQuery  : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2020-04-09 16:21:22.715 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.m.QuestionExtMapper.selectByQuery  : ==> Parameters: 0(Integer), 4(Integer)
+2020-04-09 16:21:22.728 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.QuestionExtMapper.countByQuery   : <==      Total: 1
+2020-04-09 16:21:22.729 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.QuestionExtMapper.selectByQuery  : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2020-04-09 16:21:22.729 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.QuestionExtMapper.selectByQuery  : ==> Parameters: 0(Integer), 4(Integer)
+2020-04-09 16:21:22.748 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.m.QuestionExtMapper.selectByQuery  : <==      Total: 0
+2020-04-09 16:21:22.748 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.m.QuestionExtMapper.selectByQuery  : <==      Total: 0
+2020-04-09 16:21:22.751 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.m.QuestionExtMapper.selectByQuery  : <==      Total: 0
+2020-04-09 16:21:22.767 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.QuestionExtMapper.selectByQuery  : <==      Total: 0
+2020-04-09 16:21:22.782 DEBUG 7304 --- [http-nio-8887-exec-10] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:21:22.782 DEBUG 7304 --- [http-nio-8887-exec-10] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 5d2873d3-66a3-4b66-8319-40665af28b19(String)
+2020-04-09 16:21:22.784 DEBUG 7304 --- [http-nio-8887-exec-4] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:21:22.784 DEBUG 7304 --- [http-nio-8887-exec-4] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 5d2873d3-66a3-4b66-8319-40665af28b19(String)
+2020-04-09 16:21:22.821 DEBUG 7304 --- [http-nio-8887-exec-4] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-09 16:21:22.821 DEBUG 7304 --- [http-nio-8887-exec-4] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
+2020-04-09 16:21:22.822 DEBUG 7304 --- [http-nio-8887-exec-4] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
+2020-04-09 16:21:22.823 DEBUG 7304 --- [http-nio-8887-exec-10] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-09 16:21:22.823 DEBUG 7304 --- [http-nio-8887-exec-10] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
+2020-04-09 16:21:22.824 DEBUG 7304 --- [http-nio-8887-exec-10] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
+2020-04-09 16:21:22.857 DEBUG 7304 --- [http-nio-8887-exec-4] c.l.c.m.N.countByExample                 : <==      Total: 1
+2020-04-09 16:21:22.859 DEBUG 7304 --- [http-nio-8887-exec-10] c.l.c.m.N.countByExample                 : <==      Total: 1
+2020-04-09 16:21:22.865 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:21:22.865 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 5d2873d3-66a3-4b66-8319-40665af28b19(String)
+2020-04-09 16:21:22.869 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:21:22.869 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 5d2873d3-66a3-4b66-8319-40665af28b19(String)
+2020-04-09 16:21:22.901 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-09 16:21:22.902 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
+2020-04-09 16:21:22.902 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
+2020-04-09 16:21:22.905 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-09 16:21:22.906 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
+2020-04-09 16:21:22.906 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
+2020-04-09 16:21:22.938 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.m.N.countByExample                 : <==      Total: 1
+2020-04-09 16:21:22.942 DEBUG 7304 --- [http-nio-8887-exec-1] c.l.c.m.N.countByExample                 : <==      Total: 1
+2020-04-09 16:21:22.942 DEBUG 7304 --- [http-nio-8887-exec-5] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:21:22.942 DEBUG 7304 --- [http-nio-8887-exec-5] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 5d2873d3-66a3-4b66-8319-40665af28b19(String)
+2020-04-09 16:21:22.978 DEBUG 7304 --- [http-nio-8887-exec-5] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-09 16:21:22.979 DEBUG 7304 --- [http-nio-8887-exec-5] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
+2020-04-09 16:21:22.979 DEBUG 7304 --- [http-nio-8887-exec-5] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
+2020-04-09 16:21:23.017 DEBUG 7304 --- [http-nio-8887-exec-5] c.l.c.m.N.countByExample                 : <==      Total: 1
+2020-04-09 16:21:23.033 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:21:23.033 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 5d2873d3-66a3-4b66-8319-40665af28b19(String)
+2020-04-09 16:21:23.070 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-09 16:21:23.070 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
+2020-04-09 16:21:23.071 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
+2020-04-09 16:21:23.107 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.m.N.countByExample                 : <==      Total: 1
+2020-04-09 16:23:10.500 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:23:10.500 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 5d2873d3-66a3-4b66-8319-40665af28b19(String)
+2020-04-09 16:23:10.536 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-09 16:23:10.537 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
+2020-04-09 16:23:10.537 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
+2020-04-09 16:23:10.573 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.m.N.countByExample                 : <==      Total: 1
+2020-04-09 16:23:10.614 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.QuestionExtMapper.countByQuery   : ==>  Preparing: select count(*) from QUESTION 
+2020-04-09 16:23:10.614 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.QuestionExtMapper.countByQuery   : ==> Parameters: 
+2020-04-09 16:23:10.652 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.QuestionExtMapper.countByQuery   : <==      Total: 1
+2020-04-09 16:23:10.653 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.QuestionExtMapper.selectByQuery  : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2020-04-09 16:23:10.653 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.QuestionExtMapper.selectByQuery  : ==> Parameters: 0(Integer), 4(Integer)
+2020-04-09 16:23:10.691 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.QuestionExtMapper.selectByQuery  : <==      Total: 0
+2020-04-09 16:23:36.639 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.m.QuestionExtMapper.countByQuery   : ==>  Preparing: select count(*) from QUESTION 
+2020-04-09 16:23:36.640 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.m.QuestionExtMapper.countByQuery   : ==> Parameters: 
+2020-04-09 16:23:36.675 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.m.QuestionExtMapper.countByQuery   : <==      Total: 1
+2020-04-09 16:23:36.676 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.m.QuestionExtMapper.selectByQuery  : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2020-04-09 16:23:36.677 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.m.QuestionExtMapper.selectByQuery  : ==> Parameters: 0(Integer), 4(Integer)
+2020-04-09 16:23:36.713 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.m.QuestionExtMapper.selectByQuery  : <==      Total: 0
+2020-04-09 16:24:30.668  WARN 7304 --- [HikariPool-2 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=1m18s106ms659µs255ns).
+2020-04-09 16:24:30.712 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.QuestionExtMapper.countByQuery   : ==>  Preparing: select count(*) from QUESTION 
+2020-04-09 16:24:30.712 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.QuestionExtMapper.countByQuery   : ==> Parameters: 
+2020-04-09 16:24:30.749 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.QuestionExtMapper.countByQuery   : <==      Total: 1
+2020-04-09 16:24:30.750 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.QuestionExtMapper.selectByQuery  : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2020-04-09 16:24:30.750 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.QuestionExtMapper.selectByQuery  : ==> Parameters: 0(Integer), 4(Integer)
+2020-04-09 16:24:30.792 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.QuestionExtMapper.selectByQuery  : <==      Total: 0
+2020-04-09 16:24:35.338 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.m.QuestionExtMapper.countByQuery   : ==>  Preparing: select count(*) from QUESTION 
+2020-04-09 16:24:35.338 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.m.QuestionExtMapper.countByQuery   : ==> Parameters: 
+2020-04-09 16:24:35.374 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.m.QuestionExtMapper.countByQuery   : <==      Total: 1
+2020-04-09 16:24:35.375 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.m.QuestionExtMapper.selectByQuery  : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2020-04-09 16:24:35.375 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.m.QuestionExtMapper.selectByQuery  : ==> Parameters: 0(Integer), 4(Integer)
+2020-04-09 16:24:35.411 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.m.QuestionExtMapper.selectByQuery  : <==      Total: 0
+2020-04-09 16:24:37.187 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.m.QuestionExtMapper.countByQuery   : ==>  Preparing: select count(*) from QUESTION 
+2020-04-09 16:24:37.188 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.m.QuestionExtMapper.countByQuery   : ==> Parameters: 
+2020-04-09 16:24:37.223 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.m.QuestionExtMapper.countByQuery   : <==      Total: 1
+2020-04-09 16:24:37.224 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.m.QuestionExtMapper.selectByQuery  : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2020-04-09 16:24:37.224 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.m.QuestionExtMapper.selectByQuery  : ==> Parameters: 0(Integer), 4(Integer)
+2020-04-09 16:24:37.260 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.m.QuestionExtMapper.selectByQuery  : <==      Total: 0
+2020-04-09 16:24:42.122 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.m.QuestionExtMapper.countByQuery   : ==>  Preparing: select count(*) from QUESTION 
+2020-04-09 16:24:42.122 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.m.QuestionExtMapper.countByQuery   : ==> Parameters: 
+2020-04-09 16:24:42.162 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.m.QuestionExtMapper.countByQuery   : <==      Total: 1
+2020-04-09 16:24:42.162 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.m.QuestionExtMapper.selectByQuery  : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2020-04-09 16:24:42.163 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.m.QuestionExtMapper.selectByQuery  : ==> Parameters: 0(Integer), 4(Integer)
+2020-04-09 16:24:42.199 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.m.QuestionExtMapper.selectByQuery  : <==      Total: 0
+2020-04-09 16:25:22.834 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( ACCOUNT_ID = ? ) 
+2020-04-09 16:25:22.835 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 54254744(String)
+2020-04-09 16:25:22.872 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-09 16:25:22.876 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.U.updateByExampleSelective       : ==>  Preparing: update USER SET TOKEN = ?, GMT_MODIFIED = ?, AVATAR_URL = ? WHERE ( ID = ? ) 
+2020-04-09 16:25:22.876 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.U.updateByExampleSelective       : ==> Parameters: 15580b7f-3f24-4387-9a8f-5dd0b712a9eb(String), 1586420722872(Long), https://avatars2.githubusercontent.com/u/54254744?v=4(String), 1(Long)
+2020-04-09 16:25:22.953 DEBUG 7304 --- [http-nio-8887-exec-7] c.l.c.m.U.updateByExampleSelective       : <==    Updates: 1
+2020-04-09 16:25:22.993 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:25:22.993 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 15580b7f-3f24-4387-9a8f-5dd0b712a9eb(String)
+2020-04-09 16:25:23.029 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-09 16:25:23.030 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
+2020-04-09 16:25:23.030 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
+2020-04-09 16:25:23.066 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.m.N.countByExample                 : <==      Total: 1
+2020-04-09 16:25:23.067 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.m.QuestionExtMapper.countByQuery   : ==>  Preparing: select count(*) from QUESTION 
+2020-04-09 16:25:23.067 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.m.QuestionExtMapper.countByQuery   : ==> Parameters: 
+2020-04-09 16:25:23.103 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.m.QuestionExtMapper.countByQuery   : <==      Total: 1
+2020-04-09 16:25:23.103 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.m.QuestionExtMapper.selectByQuery  : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2020-04-09 16:25:23.103 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.m.QuestionExtMapper.selectByQuery  : ==> Parameters: 0(Integer), 4(Integer)
+2020-04-09 16:25:23.139 DEBUG 7304 --- [http-nio-8887-exec-8] c.l.c.m.QuestionExtMapper.selectByQuery  : <==      Total: 0
+2020-04-09 16:25:23.164 DEBUG 7304 --- [http-nio-8887-exec-10] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:25:23.164 DEBUG 7304 --- [http-nio-8887-exec-10] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 15580b7f-3f24-4387-9a8f-5dd0b712a9eb(String)
+2020-04-09 16:25:23.200 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:25:23.200 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 15580b7f-3f24-4387-9a8f-5dd0b712a9eb(String)
+2020-04-09 16:25:23.201 DEBUG 7304 --- [http-nio-8887-exec-10] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-09 16:25:23.201 DEBUG 7304 --- [http-nio-8887-exec-10] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
+2020-04-09 16:25:23.201 DEBUG 7304 --- [http-nio-8887-exec-10] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
+2020-04-09 16:25:23.237 DEBUG 7304 --- [http-nio-8887-exec-10] c.l.c.m.N.countByExample                 : <==      Total: 1
+2020-04-09 16:25:23.238 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-09 16:25:23.239 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
+2020-04-09 16:25:23.239 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
+2020-04-09 16:25:23.275 DEBUG 7304 --- [http-nio-8887-exec-2] c.l.c.m.N.countByExample                 : <==      Total: 1
+2020-04-09 16:25:23.281 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:25:23.281 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 15580b7f-3f24-4387-9a8f-5dd0b712a9eb(String)
+2020-04-09 16:25:23.315 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:25:23.315 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 15580b7f-3f24-4387-9a8f-5dd0b712a9eb(String)
+2020-04-09 16:25:23.316 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-09 16:25:23.318 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
+2020-04-09 16:25:23.318 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
+2020-04-09 16:25:23.351 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-09 16:25:23.351 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
+2020-04-09 16:25:23.352 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
+2020-04-09 16:25:23.353 DEBUG 7304 --- [http-nio-8887-exec-6] c.l.c.m.N.countByExample                 : <==      Total: 1
+2020-04-09 16:25:23.359 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:25:23.359 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 15580b7f-3f24-4387-9a8f-5dd0b712a9eb(String)
+2020-04-09 16:25:23.387 DEBUG 7304 --- [http-nio-8887-exec-3] c.l.c.m.N.countByExample                 : <==      Total: 1
+2020-04-09 16:25:23.395 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-09 16:25:23.396 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
+2020-04-09 16:25:23.396 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
+2020-04-09 16:25:23.432 DEBUG 7304 --- [http-nio-8887-exec-9] c.l.c.m.N.countByExample                 : <==      Total: 1
+2020-04-09 16:25:23.449 DEBUG 7304 --- [http-nio-8887-exec-5] c.l.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2020-04-09 16:25:23.449 DEBUG 7304 --- [http-nio-8887-exec-5] c.l.c.mapper.UserMapper.selectByExample  : ==> Parameters: 15580b7f-3f24-4387-9a8f-5dd0b712a9eb(String)
+2020-04-09 16:25:23.486 DEBUG 7304 --- [http-nio-8887-exec-5] c.l.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-09 16:25:23.486 DEBUG 7304 --- [http-nio-8887-exec-5] c.l.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( STATUS = ? and RECEIVER = ? ) 
+2020-04-09 16:25:23.487 DEBUG 7304 --- [http-nio-8887-exec-5] c.l.c.m.N.countByExample                 : ==> Parameters: 0(Integer), 1(Long)
+2020-04-09 16:25:23.522 DEBUG 7304 --- [http-nio-8887-exec-5] c.l.c.m.N.countByExample                 : <==      Total: 1

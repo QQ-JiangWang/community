@@ -1,1 +1,1 @@
-alter table COMMENT add Comment_Count bigint default 0;
+ALTER TABLE COMMENT ADD COMMENT_COUNT BIGINT DEFAULT 0;
